@@ -9,4 +9,9 @@ proc fizzbuzz(n: int) =
     else:
       echo i
 
-fizzbuzz(31)
+proc main() =
+  let num = 31  
+  fizzbuzz(num)
+
+when isMainModule:
+  main()
