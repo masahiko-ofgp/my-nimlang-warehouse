@@ -15,11 +15,11 @@ proc play(d: Device) =
 proc stop(d: Device) =
   echo "STOP: " & $d.kind
 
-var
-  cdp = Device(kind: CDPlayer, cd: "Buena Vista Social Club")
-  dvdp = Device(kind: DVDPlayer, dvd: "Forrest Gump")
-
 proc main() =
+  var
+    cdp = Device(kind: CDPlayer, cd: "Buena Vista Social Club")
+    dvdp = Device(kind: DVDPlayer, dvd: "Forrest Gump")
+
   cdp.play()
   dvdp.play()
 
