@@ -1,5 +1,5 @@
 proc fizzbuzz(n: int) =
-  for i in 0..n:
+  for i in countup(0, n):
     if i mod 15 == 0:
       echo "Fizzbuzz"
     elif i mod 5 == 0:
@@ -10,7 +10,7 @@ proc fizzbuzz(n: int) =
       echo i
 
 proc main() =
-  let num = 31  
+  let num = 30  
   fizzbuzz(num)
 
 when isMainModule:

@@ -12,7 +12,7 @@ proc play(d: Device) =
   of CDPlayer: echo "PLAY: " & d.cd
   of DVDPlayer: echo "PLAY: " & d.dvd
 
-proc stop(d: Device) =
+proc stop(d: Device) {.discardable.} =
   echo "STOP: " & $d.kind
 
 proc main() =
@@ -20,7 +20,7 @@ proc main() =
     cdp = Device(kind: CDPlayer, cd: "Buena Vista Social Club")
     dvdp = Device(kind: DVDPlayer, dvd: "Forrest Gump")
 
-  cdp.play()
+  discard cdp.play()
   dvdp.play()
 
   cdp.stop()
