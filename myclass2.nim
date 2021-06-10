@@ -2,7 +2,8 @@ type
   DeviceKind = enum
     CDPlayer
     DVDPlayer
-  Device = ref object
+  Device = ref DeviceObj
+  DeviceObj = object
     case kind: DeviceKind
     of CDPlayer: cd: string
     of DVDPlayer: dvd: string
@@ -12,7 +13,7 @@ proc play(d: Device) =
   of CDPlayer: echo "PLAY: " & d.cd
   of DVDPlayer: echo "PLAY: " & d.dvd
 
-proc stop(d: Device) {.discardable.} =
+proc stop(d: Device) =
   echo "STOP: " & $d.kind
 
 proc main() =
@@ -20,7 +21,7 @@ proc main() =
     cdp = Device(kind: CDPlayer, cd: "Buena Vista Social Club")
     dvdp = Device(kind: DVDPlayer, dvd: "Forrest Gump")
 
-  discard cdp.play()
+  cdp.play()
   dvdp.play()
 
   cdp.stop()

@@ -1,12 +1,9 @@
-proc hello(): string =
-  result = "Hello, world!!"
-
-proc hello2(name: string): string =
-  result = "Hello, " & name & "!!"
+func greeting(name="world"): string =
+  "Hello, "&name&"!"
 
 proc main() =
-  echo hello()
-  echo hello2("Tom")
+  echo greeting()
+  echo greeting("Tom")
 
 when isMainModule:
   main()
